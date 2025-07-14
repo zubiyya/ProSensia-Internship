@@ -1,0 +1,10 @@
+📘 Project Summary Report
+-------------------------
+Project: School Management
+Timeline: 2 weeks
+Priority: High
+Features to Implement:
+ - Add new student
+ - Delete student record
+ - Generate report card
+ - Send email alert on low grades
