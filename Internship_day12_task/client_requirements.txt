@@ -1,8 +1,0 @@
-Project: School Management
-Features:
-- Add new student
-- Delete student record
-- Generate report card
-- Send email alert on low grades
-Timeline: 2 weeks
-Priority: High
