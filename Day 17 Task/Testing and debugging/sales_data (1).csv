@@ -1,0 +1,17 @@
+Product,Region,Sales
+Laptop,North,2000
+Laptop,South,1800
+Laptop,East,2100
+Laptop,West,1700
+Mouse,North,1200
+Mouse,South,1000
+Mouse,East,1100
+Mouse,West,900
+Monitor,North,2500
+Monitor,South,2300
+Monitor,East,2600
+Monitor,West,2200
+Headphones,North,1500
+Headphones,South,1300
+Headphones,East,1400
+Headphones,West,1200
