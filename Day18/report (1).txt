@@ -1,0 +1,7 @@
+📊 Sales Summary
+Product: Keyboard – Revenue: 6000
+Product: Laptop – Revenue: 170000
+Product: Mouse – Revenue: 7000
+
+🔸 Total Revenue: 183000
+🔸 Top Product: Laptop
