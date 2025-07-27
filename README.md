@@ -1,2 +1,0 @@
-# intershipProject
-prosensia intership
