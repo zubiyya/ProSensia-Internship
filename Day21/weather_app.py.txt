@@ -1,0 +1,66 @@
+import requests
+
+def load_api_key():
+    return input("🔑 Enter your OpenWeather API key: ").strip()
+
+def get_weather(city, api_key):
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}&units=metric"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+
+        weather = {
+            "City": data["name"],
+            "Temperature": f"{data['main']['temp']} °C",
+            "Humidity": f"{data['main']['humidity']}%",
+            "Description": data["weather"][0]["description"].capitalize()
+        }
+        return weather
+    except requests.exceptions.HTTPError:
+        return {"Error": "City not found or bad request."}
+    except Exception as e:
+        return {"Error": f"API request failed: {str(e)}"}
+
+def display_weather(weather):
+    if "Error" in weather:
+        print("⚠️", weather["Error"])
+    else:
+        print("🌦️ Weather Info:")
+        for key, value in weather.items():
+            print(f"{key}: {value}")
+
+def save_to_file(weather):
+    with open("weather_data.txt", "a") as file:
+        file.write(str(weather) + "\n")
+    print("💾 Data saved to weather_data.txt")
+
+def menu():
+    api_key = load_api_key()
+    if not api_key:
+        return
+    while True:
+        print("\n📋 Menu:")
+        print("1. Check weather")
+        print("2. Save last result")
+        print("3. Exit")
+        choice = input("🔢 Enter your choice (1/2/3): ")
+
+        if choice == "1":
+            city = input("🏙️ Enter city name: ")
+            global weather
+            weather = get_weather(city, api_key)
+            display_weather(weather)
+        elif choice == "2":
+            try:
+                save_to_file(weather)
+            except NameError:
+                print("❗ No weather data to save. Fetch it first!")
+        elif choice == "3":
+            print("👋 Exiting. Goodbye!")
+            break
+        else:
+            print("❗ Invalid option.")
+
+if __name__ == "__main__":
+    menu()
