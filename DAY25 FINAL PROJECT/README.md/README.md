@@ -1,20 +1,55 @@
-# API Data Fetcher & Analyzer – Day 13
+        ArcadeHub – Multi-Game Desktop App
+ArcadeHub is a Tkinter-based desktop app that brings together classic logic games in a single clean interface. With AI opponents, multiplayer modes, and interactive GUI elements, it's perfect for quick brain breaks or fun with friends.
 
-This Python script fetches real-time Bitcoin price data from the Coindesk API and outputs it in a human-readable format. The output is printed to the console and saved in a text file.
+Games Included
+Tic Tac Toe – with Single / Multiplayer
+Connect Four – with Single / Multiplayer
+Hangman – Canvas-based drawing for visual feedback
+Rock Paper Scissors – Quick reflex-based fun
+Folder Structure
+capstone_project/ ├──setup.py └──arcade_hub/ │── main.py # App entry point ├── init.py
 
-## Features
-- Connects to a public API
-- Parses JSON data
-- Extracts relevant currency prices
-- Saves data to a report file
+├── core/ # Game logic utilities
+  ├── __init__.py
+  ├── theme_manager.py 
+  ├── stats_manager.py 
+  └── player_manager.py 
 
-## Output Example
-```
-USD: $30,500.55  
-GBP: £23,020.43  
-EUR: €26,340.12  
-```
+├── games/ # Game implementations
+  ├── __init__.py
+  ├── tic_tac_toe.py
+  ├── connect_four.py
+  ├── hangman.py
+  └── rock_paper_scissors.py
 
-## Files
-- `api_fetcher.py` – Main script
-- `btc_price_report.txt` – Output file
+├── ui/ # Interface
+  ├── __init__.py
+  ├── arcade_hub.py 
+  └── stats_window.py
+
+└── screenshots/ # Screenshots, icons
+  ├── main_menu.png
+  ├── tic_tac_toe.png
+  ├── connect_four.png
+  ├── rock_paper_scissors.png
+  └── hangman.png
+How to Run the App
+Install dependencies (if any) pip install -e .
+Run the app python arcade_hub/main.py
+Features
+-Themed GUI (Tkinter) with 4 color schemes
+-AI Opponents:
+
+Tic Tac Toe: Minimax algorithm
+Connect Four: Rule-based logic (win/block/random)
+-Hangman Animations: Progressive canvas drawings
+-Modular OOP Design: Separated core/games/ui logic
+-Replay System: Instant restart option after games
+-Statistics Tracking: Persistent win/loss records saved to json file(JSON)
+Dependencies
+Python 3.9+ Tkinter (pre-installed with Python)
+
+Team
+Kashaf Qureshi
+Zubia Tanoli
+Umama Jadoon
