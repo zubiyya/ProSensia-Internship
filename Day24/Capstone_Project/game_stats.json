@@ -1,0 +1,21 @@
+{
+    "tic_tac_toe": {
+        "wins": 0,
+        "losses": 0,
+        "draws": 1
+    },
+    "connect_four": {
+        "wins": 0,
+        "losses": 0,
+        "draws": 0
+    },
+    "hangman": {
+        "wins": 0,
+        "losses": 0
+    },
+    "rock_paper_scissors": {
+        "wins": 0,
+        "losses": 0,
+        "draws": 0
+    }
+}
