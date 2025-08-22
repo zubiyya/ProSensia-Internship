@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[9]:
+
+
+get_ipython().system('pip install groq')
+
+
+# In[13]:
+
+
+import os
+from dotenv import load_dotenv
+from groq import Groq
+
+# Load API key
+load_dotenv()
+api_key = os.getenv("GROQ_API_KEY")
+
+# Client setup
+client = Groq(api_key=api_key)
+
+# API request
+response = client.chat.completions.create(
+    model="llama3-8b-8192",  # Free model
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Write a short poem about AI."}
+    ]
+)
+
+# Output
+print("AI Response:")
+print(response.choices[0].message.content)
+
+
+# In[ ]:
